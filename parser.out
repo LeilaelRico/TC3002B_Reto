@@ -1,0 +1,159 @@
+Created by PLY version 3.11 (http://www.dabeaz.com/ply)
+
+Unused terminals:
+
+    SEMICOLON
+
+Grammar
+
+Rule 0     S' -> class_declaration
+Rule 1     class_declaration -> CLASS IDENTIFIER LBRACE method_declaration_list RBRACE
+Rule 2     method_declaration -> PUBLIC VOID IDENTIFIER LPAREN RPAREN LBRACE RBRACE
+Rule 3     method_declaration_list -> method_declaration
+Rule 4     method_declaration_list -> method_declaration_list method_declaration
+
+Terminals, with rules where they appear
+
+CLASS                : 1
+IDENTIFIER           : 1 2
+LBRACE               : 1 2
+LPAREN               : 2
+PUBLIC               : 2
+RBRACE               : 1 2
+RPAREN               : 2
+SEMICOLON            : 
+VOID                 : 2
+error                : 
+
+Nonterminals, with rules where they appear
+
+class_declaration    : 0
+method_declaration   : 3 4
+method_declaration_list : 1 4
+
+Parsing method: LALR
+
+state 0
+
+    (0) S' -> . class_declaration
+    (1) class_declaration -> . CLASS IDENTIFIER LBRACE method_declaration_list RBRACE
+
+    CLASS           shift and go to state 2
+
+    class_declaration              shift and go to state 1
+
+state 1
+
+    (0) S' -> class_declaration .
+
+
+
+state 2
+
+    (1) class_declaration -> CLASS . IDENTIFIER LBRACE method_declaration_list RBRACE
+
+    IDENTIFIER      shift and go to state 3
+
+
+state 3
+
+    (1) class_declaration -> CLASS IDENTIFIER . LBRACE method_declaration_list RBRACE
+
+    LBRACE          shift and go to state 4
+
+
+state 4
+
+    (1) class_declaration -> CLASS IDENTIFIER LBRACE . method_declaration_list RBRACE
+    (3) method_declaration_list -> . method_declaration
+    (4) method_declaration_list -> . method_declaration_list method_declaration
+    (2) method_declaration -> . PUBLIC VOID IDENTIFIER LPAREN RPAREN LBRACE RBRACE
+
+    PUBLIC          shift and go to state 7
+
+    method_declaration_list        shift and go to state 5
+    method_declaration             shift and go to state 6
+
+state 5
+
+    (1) class_declaration -> CLASS IDENTIFIER LBRACE method_declaration_list . RBRACE
+    (4) method_declaration_list -> method_declaration_list . method_declaration
+    (2) method_declaration -> . PUBLIC VOID IDENTIFIER LPAREN RPAREN LBRACE RBRACE
+
+    RBRACE          shift and go to state 8
+    PUBLIC          shift and go to state 7
+
+    method_declaration             shift and go to state 9
+
+state 6
+
+    (3) method_declaration_list -> method_declaration .
+
+    RBRACE          reduce using rule 3 (method_declaration_list -> method_declaration .)
+    PUBLIC          reduce using rule 3 (method_declaration_list -> method_declaration .)
+
+
+state 7
+
+    (2) method_declaration -> PUBLIC . VOID IDENTIFIER LPAREN RPAREN LBRACE RBRACE
+
+    VOID            shift and go to state 10
+
+
+state 8
+
+    (1) class_declaration -> CLASS IDENTIFIER LBRACE method_declaration_list RBRACE .
+
+    $end            reduce using rule 1 (class_declaration -> CLASS IDENTIFIER LBRACE method_declaration_list RBRACE .)
+
+
+state 9
+
+    (4) method_declaration_list -> method_declaration_list method_declaration .
+
+    RBRACE          reduce using rule 4 (method_declaration_list -> method_declaration_list method_declaration .)
+    PUBLIC          reduce using rule 4 (method_declaration_list -> method_declaration_list method_declaration .)
+
+
+state 10
+
+    (2) method_declaration -> PUBLIC VOID . IDENTIFIER LPAREN RPAREN LBRACE RBRACE
+
+    IDENTIFIER      shift and go to state 11
+
+
+state 11
+
+    (2) method_declaration -> PUBLIC VOID IDENTIFIER . LPAREN RPAREN LBRACE RBRACE
+
+    LPAREN          shift and go to state 12
+
+
+state 12
+
+    (2) method_declaration -> PUBLIC VOID IDENTIFIER LPAREN . RPAREN LBRACE RBRACE
+
+    RPAREN          shift and go to state 13
+
+
+state 13
+
+    (2) method_declaration -> PUBLIC VOID IDENTIFIER LPAREN RPAREN . LBRACE RBRACE
+
+    LBRACE          shift and go to state 14
+
+
+state 14
+
+    (2) method_declaration -> PUBLIC VOID IDENTIFIER LPAREN RPAREN LBRACE . RBRACE
+
+    RBRACE          shift and go to state 15
+
+
+state 15
+
+    (2) method_declaration -> PUBLIC VOID IDENTIFIER LPAREN RPAREN LBRACE RBRACE .
+
+    RBRACE          reduce using rule 2 (method_declaration -> PUBLIC VOID IDENTIFIER LPAREN RPAREN LBRACE RBRACE .)
+    PUBLIC          reduce using rule 2 (method_declaration -> PUBLIC VOID IDENTIFIER LPAREN RPAREN LBRACE RBRACE .)
+

@@ -27,7 +27,7 @@ def limpiar_archivo_java(archivo):
     return contenido
 
 
-carpeta = '.\\conplag\\minor'
+carpeta = ".\\CFiles\\java\\train"
 archivos_java = [archivo for archivo in os.listdir(
     carpeta) if archivo.endswith('.java')]
 
@@ -45,5 +45,3 @@ for archivo in archivos_java:
         ast_trees[archivo] = ast_tree
     except javalang.parser.JavaSyntaxError as e:
         print("Error de sintaxis en", archivo, ":", e)
-
-
