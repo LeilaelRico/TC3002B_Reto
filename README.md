@@ -90,8 +90,9 @@ Esta solución realiza la comparación de archivos de código fuente para detect
 6. Determinación del grado de pertenencia al plagio: Define una función `grado_pertenencia` que determina el grado de pertenencia al plagio basado en ciertas reglas difusas.
 7. Comparación de archivos y detección de plagio: Compara todos los pares de archivos y calcula la similitud entre ellos. Luego, determina si hay una alta similitud y, por lo tanto, un posible caso de plagio.
 8. Resultados Finales: Con los archivos etiquetados como pertenencia al plagio ALTA se carga una lista que contiene todos los archivos que son verdaderamente plagiados, para así verificar cuales fueron verdaderos positivos y cuales fueron falsos negativos, con esto se encontro lo siguiente:
-
+```
 Pares detectados con pertenencia alta: 36
 Total de pares plagiados verdaderos: 251
 Pares plagiados encontrados verdaderos: 13
 Accuracy: 0.36
+```
