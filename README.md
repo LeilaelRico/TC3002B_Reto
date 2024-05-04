@@ -80,4 +80,18 @@ Pares plagiados encontrados verdaderos: 18
 Accuracy: 0.90
 ```
 ## Solución 3 Comparación de similitud y definiendo pertenencia con Fuzzy Logic
+Esta solución realiza la comparación de archivos de código fuente para detectar posibles casos de plagio utilizando técnicas de similitud de texto y reglas difusas.
 
+1. Importaciones de librerias: Se importan los módulos necesarios para el análisis, siendo estos `os`, `nltk`, `numpy`, `TfidfVectorizer` y `sklearn`.
+2. Lectura de archivos: Lee todos los archivos .java encontrados en una carpeta específica para hacer la tokenización de los archivos.
+3. Tokenización del código: Define una función `tokenizar_archivo` para tokenizar un archivo de código fuente.
+4. Vectorización TF-IDF: Convierte los archivos tokenizados en texto plano y construye un vectorizador TF-IDF para calcular la similitud entre los archivos.
+5. Cálculo de similitud: Utiliza las funciones `similitud_coseno` y `similitud_jaccard` para calcular la similitud entre los archivos.
+6. Determinación del grado de pertenencia al plagio: Define una función `grado_pertenencia` que determina el grado de pertenencia al plagio basado en ciertas reglas difusas.
+7. Comparación de archivos y detección de plagio: Compara todos los pares de archivos y calcula la similitud entre ellos. Luego, determina si hay una alta similitud y, por lo tanto, un posible caso de plagio.
+8. Resultados Finales: Con los archivos etiquetados como pertenencia al plagio ALTA se carga una lista que contiene todos los archivos que son verdaderamente plagiados, para así verificar cuales fueron verdaderos positivos y cuales fueron falsos negativos, con esto se encontro lo siguiente:
+
+Pares detectados con pertenencia alta: 36
+Total de pares plagiados verdaderos: 251
+Pares plagiados encontrados verdaderos: 13
+Accuracy: 0.36
