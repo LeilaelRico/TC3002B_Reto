@@ -77,8 +77,7 @@ for i, archivo1 in enumerate(codigo_preprocesado.keys()):
         if i < j:
             similitud = similitudes[i, j]
             if similitud >= 0.85 and (archivo1, archivo2) not in mostrados and (archivo2, archivo1) not in mostrados:
-                print(f"Similitud de coseno entre {archivo1} y {
-                      archivo2}: {round(similitud, 2)}")
+                print(f"Similitud de coseno entre {archivo1} y {archivo2}: {round(similitud, 2)}")
                 mostrados.add((archivo1, archivo2))
 
 # Comprobación

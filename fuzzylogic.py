@@ -96,8 +96,7 @@ for nombre_archivo1, nombre_archivo2, sim_jaccard, sim_coseno in data:
 
     # Imprimir el grado de pertenencia al plagio junto con los nombres de los archivos
     if pertenencia is not None:  # Imprimir solo si el grado de pertenencia no es None
-        print(f"Comparando código '{
-              nombre_archivo1}' con código '{nombre_archivo2}':")
+        print(f"Comparando código '{nombre_archivo1}' con código '{nombre_archivo2}':")
         print("Similitud Jaccard:", round(sim_jaccard, 4))
         print("Similitud Coseno:", round(sim_coseno, 4))
         print("Grado de pertenencia al plagio:", pertenencia)
