@@ -1,7 +1,7 @@
 # TC3002B_Reto
 
-Desarrollo de aplicaciones avanzadas de ciencias computacionales (Gpo 201)
-Cristian Leilael Rico Espinosa A01707023
+Desarrollo de aplicaciones avanzadas de ciencias computacionales (Gpo 201)  
+Cristian Leilael Rico Espinosa A01707023    
 Fabián Enrique Avilés Cortés A01367678
 
 ## Contexto
@@ -62,7 +62,22 @@ Pares plagiados encontrados: 5
 Accuracy: 0.50
 ```
 ## Solución 2 Comparación de similitud coomparando los archivos convirtiendolos a texto
+Esta solución realiza un análisis de similitud entre archivos Java para detectar posibles casos de plagio, utilizando TF-IDF y similitud de coseno como métricas, y luego evalúa la efectividad del análisis comparando los resultados con casos de plagio conocidos.
 
-
+1. Importaciones de librerias: Para el uso adecuado de esta solución se hace uso de `os`, `re`, `numpy`, `matplot`, `seaborn` y `sklearn`.
+2. Preprocesamiento del codigo: La función `preprocesar_codigo(archivo)` toma la carpeta con todos los archivos .java añadidos, para hacer una limpieza de los archivos, en esta parte se eliminan los `comentarios`, `lineas en blanco` e `imports`.
+3. Diccionario de codigo preprocesado: Guardado de los codigos ya limpiados y los almacena en un diccionario en formato de texto plano.
+4. Vectorización de textos con TF-IDF: Se convierte el texto preprocesado en una matriz TF-IDF, que representa la importancia de cada palabra en cada documento en función de su frecuencia en el archivo.
+5. Cálculo de similitud coseno: Calcula la similitud de coseno entre cada par de archivos basada en la matriz TF-IDF.
+6. Creación de la matriz de similitud: Crea una matriz cuadrada que almacena las similitudes calculadas entre cada par de archivos.
+7. Visualización del heatmap: Utiliza matplotlib y seaborn para visualizar la matriz de similitud como un heatmap, lo que proporciona una representación visual de las similitudes entre los archivos.
+8. Guardado de similitudes significativas: Guarda en `mostrados` las similitudes de coseno entre cada par de archivos que tienen una similitud mayor o igual a 0.85.
+9. Resultados Finales: Con los archivos guardados como plagio se carga una lista que contiene todos los archivos que son verdaderamente plagiados, para así verificar cuales fueron verdaderos positivos y cuales fueron falsos negativos, con esto se encontro lo siguiente:
+```
+Total de archivos en la comparación: 340
+Total de pares plagiados: 251
+Pares plagiados encontrados: 18
+Accuracy: 0.90
+```
 ## Solución 3 Comparación de similitud y definiendo pertenencia con Fuzzy Logic
 
