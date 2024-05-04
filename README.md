@@ -57,8 +57,8 @@ Seguido de se normaliza el contenido de las matrices de conteo, para poder lleva
 8. Resultados Finales de la solución con AST: Con los archivos guardados como plagio se carga una lista que contiene todos los archivos que son verdaderamente plagiados, para así verificar cuales fueron verdaderos positivos y cuales fueron falsos negativos, con esto se encontro lo siguiente:
 ```Pares detectados como plagio en mostrados 10
 Total de archivos en la comparación: 62
-Total de pares plagiados: 251
-Pares plagiados encontrados: 5
+Total de pares plagiados verdaeros: 251
+Pares plagiados encontrados verdaderos: 5
 Accuracy: 0.50
 ```
 ## Solución 2 Comparación de similitud coomparando los archivos convirtiendolos a texto
@@ -75,8 +75,8 @@ Esta solución realiza un análisis de similitud entre archivos Java para detect
 9. Resultados Finales: Con los archivos guardados como plagio se carga una lista que contiene todos los archivos que son verdaderamente plagiados, para así verificar cuales fueron verdaderos positivos y cuales fueron falsos negativos, con esto se encontro lo siguiente:
 ```
 Total de archivos en la comparación: 340
-Total de pares plagiados: 251
-Pares plagiados encontrados: 18
+Total de pares plagiados verdaderos: 251
+Pares plagiados encontrados verdaderos: 18
 Accuracy: 0.90
 ```
 ## Solución 3 Comparación de similitud y definiendo pertenencia con Fuzzy Logic
